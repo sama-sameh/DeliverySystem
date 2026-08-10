@@ -43,7 +43,6 @@ namespace MyFirstProject.Services
                     "A product with this SKU already exists.");
             }
 
-            // Validate price
             if (dto.Price < 0)
             {
                 throw new ArgumentException(
@@ -65,7 +64,6 @@ namespace MyFirstProject.Services
             return product;
         }
 
-        // Update product
         public async Task<Product?> UpdateProductAsync(
             Guid id,
             CreateProductDto dto)

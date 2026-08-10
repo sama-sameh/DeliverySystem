@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "D:\\DotNet\\MyFirstProject\\MyFirstProject.csproj": {}
+    "D:\\DotNet\\DeliverySystem\\MyFirstProject.csproj": {}
   },
   "projects": {
-    "D:\\DotNet\\MyFirstProject\\MyFirstProject.csproj": {
+    "D:\\DotNet\\DeliverySystem\\MyFirstProject.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\DotNet\\MyFirstProject\\MyFirstProject.csproj",
+        "projectUniqueName": "D:\\DotNet\\DeliverySystem\\MyFirstProject.csproj",
         "projectName": "MyFirstProject",
-        "projectPath": "D:\\DotNet\\MyFirstProject\\MyFirstProject.csproj",
+        "projectPath": "D:\\DotNet\\DeliverySystem\\MyFirstProject.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "D:\\DotNet\\MyFirstProject\\obj\\",
+        "outputPath": "D:\\DotNet\\DeliverySystem\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\HP\\AppData\\Roaming\\NuGet\\NuGet.Config"

@@ -11,6 +11,8 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System.Text.Json.Serialization;
+using DeliverySystem.Services;
+using DeliverySystem.Middlewares;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -41,6 +43,11 @@ builder.Services.AddDbContext<ApplicationDbContext>(
 );
 builder.Services.AddScoped<IAuthService,AuthService>();
 builder.Services.AddScoped<ICustomerService, CustomerService>();
+builder.Services.AddScoped<IDeliveryService, DeliveryService>();
+builder.Services.AddScoped<IDriverService, DriverService>();
+builder.Services.AddScoped<IOrderService, OrderService>();
+builder.Services.AddScoped<IProductService, ProductService>();
+
 builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     .AddJwtBearer(options =>
     {
@@ -57,6 +64,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
 
       };
     });
+builder.Services.AddAuthorization();
 
 var app = builder.Build();
 
@@ -69,10 +77,9 @@ if (app.Environment.IsDevelopment())
 
 }
 
-// app.UseMiddleware<TransactionMiddleware>();
-
+app.UseMiddleware<GlobalExceptionMiddleware>();
 app.UseHttpsRedirection();
-// app.UseHttpsRedirection();
+app.UseAuthentication();
 app.UseAuthorization();
 app.MapControllers();
 app.Run();
